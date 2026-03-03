@@ -263,7 +263,7 @@ public class MainApp extends JFrame implements ParkingSpotListener {
 		btnList_1.setBounds(310, 275, 126, 35);
 		btnList_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// 1. Validation check first
+				// Validation check 
 				if (manuField.getText().equals("") || modelField.getText().equals("") || 
 						comboVehicleType.getSelectedItem().equals("-") || comboDuration.getSelectedItem().equals("-") ||
 						parkingSpotField.getText().equals("")) {
@@ -272,7 +272,7 @@ public class MainApp extends JFrame implements ParkingSpotListener {
 					return;
 				}
 
-				//Calculate Pricing
+				// Calculate Pricing
 				int totalPrice = 0;
 				String selectedDuration = String.valueOf(comboDuration.getSelectedItem());
 				if (selectedDuration.contains("100")) totalPrice += 100;
@@ -325,7 +325,7 @@ public class MainApp extends JFrame implements ParkingSpotListener {
 				parkingSpotField.setText("");
 				comboVehicleType.setSelectedItem("-");
 				comboDuration.setSelectedItem("-");
-				buttonGroup.clearSelection(); // Resets Radio Buttons
+				buttonGroup.clearSelection(); 
 				chckEVC.setSelected(false);
 				chckCC.setSelected(false);
 			}
@@ -353,20 +353,20 @@ public class MainApp extends JFrame implements ParkingSpotListener {
 		        
 		        if (!currentSpot.equals("") && !currentSpot.equals("Selected")) {
 		            try {
-		                // Parse the coordinates from the text field (e.g., "1-1")
+		                
 		                String[] parts = currentSpot.split("-");
 		                int r = Integer.parseInt(parts[0].trim()) - 1;
 		                int c = Integer.parseInt(parts[1].trim()) - 1;
 
-		                // 1. Mark the spot as FREE in the array
+		                
 		                masterParkingData[r][c] = false;
 
-		                // 2. Clear the text field
+		               
 		                parkingSpotField.setText("");
 		                
 		                JOptionPane.showMessageDialog(null, "Selection cleared. Spot " + currentSpot + " is now available.");
 		            } catch (Exception ex) {
-		                parkingSpotField.setText(""); // Just clear it if parsing fails
+		                parkingSpotField.setText(""); 
 		            }
 		        }
 		    }
@@ -419,4 +419,5 @@ public class MainApp extends JFrame implements ParkingSpotListener {
 		
 	}
 }
+
 
