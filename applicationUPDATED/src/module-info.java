@@ -4,6 +4,6 @@
 /**
  * 
  */
-module Application {
+module sye {
 	requires java.desktop;
 }
